@@ -2,7 +2,9 @@ package com.demo.common;
 
 import com.demo.blog.BlogController;
 import com.demo.common.model._MappingKit;
-import com.demo.index.IndexController;
+import com.demo.controller.IndexController;
+import com.demo.controller.LoginController;
+import com.demo.controller.UserController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -56,14 +58,17 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		me.add("/", IndexController.class, "/index"); // 第三个参数为该Controller的视图存放路径
+		me.add("/", IndexController.class, "/pages/index"); // 第三个参数为该Controller的视图存放路径
+		me.add("/login", LoginController.class, "/pages/login");
+		me.add("/user", UserController.class, "/pages/user");
+		me.add("/order", UserController.class, "/pages/order");
 		me.add("/blog", BlogController.class); // 第三个参数省略时默认与第一个参数值相同，在此即为
 												// "/blog"
 	}
 
 	public void configEngine(Engine me) {
-		me.addSharedFunction("/common/_layout.html");
-		me.addSharedFunction("/common/_paginate.html");
+		me.addSharedFunction("/pages/common/_layout.html");
+		me.addSharedFunction("/pages/common/_paginate.html");
 	}
 
 	public static DruidPlugin createDruidPlugin() {

@@ -27,94 +27,13 @@ public abstract class BaseExchangeTrade<M extends BaseExchangeTrade<M>> extends 
 		return getInt("user_id");
 	}
 
-	public M setUserName(java.lang.String userName) {
-		set("user_name", userName);
+	public M setUserExchangeItemId(java.lang.Integer userExchangeItemId) {
+		set("user_exchange_item_id", userExchangeItemId);
 		return (M)this;
 	}
 
-	public java.lang.String getUserName() {
-		return getStr("user_name");
-	}
-
-	public M setUserMobile(java.lang.String userMobile) {
-		set("user_mobile", userMobile);
-		return (M)this;
-	}
-
-	public java.lang.String getUserMobile() {
-		return getStr("user_mobile");
-	}
-
-	public M setUserAddress(java.lang.String userAddress) {
-		set("user_address", userAddress);
-		return (M)this;
-	}
-
-	public java.lang.String getUserAddress() {
-		return getStr("user_address");
-	}
-
-	public M setUserCommented(java.lang.Integer userCommented) {
-		set("user_commented", userCommented);
-		return (M)this;
-	}
-
-	public java.lang.Integer getUserCommented() {
-		return getInt("user_commented");
-	}
-
-	public M setOrderItemId(java.lang.String orderItemId) {
-		set("order_item_id", orderItemId);
-		return (M)this;
-	}
-
-	public java.lang.String getOrderItemId() {
-		return getStr("order_item_id");
-	}
-
-	public M setBookId(java.lang.Integer bookId) {
-		set("book_id", bookId);
-		return (M)this;
-	}
-
-	public java.lang.Integer getBookId() {
-		return getInt("book_id");
-	}
-
-	public M setPrice(java.lang.Double price) {
-		set("price", price);
-		return (M)this;
-	}
-
-	public java.lang.Double getPrice() {
-		return getDouble("price");
-	}
-
-	public M setNum(java.lang.Integer num) {
-		set("num", num);
-		return (M)this;
-	}
-
-	public java.lang.Integer getNum() {
-		return getInt("num");
-	}
-
-	public M setTotal(java.lang.Double total) {
-		set("total", total);
-		return (M)this;
-	}
-
-	public java.lang.Double getTotal() {
-		return getDouble("total");
-	}
-
-	public M setPriceType(java.lang.String priceType) {
-		set("price_type", priceType);
-		return (M)this;
-	}
-
-	public java.lang.String getPriceType() {
-		return getStr("price_type");
+	public java.lang.Integer getUserExchangeItemId() {
+		return getInt("user_exchange_item_id");
 	}
 
 	public M setStatus(java.lang.Integer status) {
@@ -135,40 +54,13 @@ public abstract class BaseExchangeTrade<M extends BaseExchangeTrade<M>> extends 
 		return getInt("buyer_id");
 	}
 
-	public M setBuyerName(java.lang.String buyerName) {
-		set("buyer_name", buyerName);
+	public M setBuyerExchangeItemId(java.lang.Integer buyerExchangeItemId) {
+		set("buyer_exchange_item_id", buyerExchangeItemId);
 		return (M)this;
 	}
 
-	public java.lang.String getBuyerName() {
-		return getStr("buyer_name");
-	}
-
-	public M setBuyerMobile(java.lang.String buyerMobile) {
-		set("buyer_mobile", buyerMobile);
-		return (M)this;
-	}
-
-	public java.lang.String getBuyerMobile() {
-		return getStr("buyer_mobile");
-	}
-
-	public M setBuyerAddress(java.lang.String buyerAddress) {
-		set("buyer_address", buyerAddress);
-		return (M)this;
-	}
-
-	public java.lang.String getBuyerAddress() {
-		return getStr("buyer_address");
-	}
-
-	public M setBuyerCommented(java.lang.Integer buyerCommented) {
-		set("buyer_commented", buyerCommented);
-		return (M)this;
-	}
-
-	public java.lang.Integer getBuyerCommented() {
-		return getInt("buyer_commented");
+	public java.lang.Integer getBuyerExchangeItemId() {
+		return getInt("buyer_exchange_item_id");
 	}
 
 }

@@ -18,6 +18,15 @@ public abstract class BaseComments<M extends BaseComments<M>> extends Model<M> i
 		return getInt("id");
 	}
 
+	public M setBookId(java.lang.Integer bookId) {
+		set("book_id", bookId);
+		return (M)this;
+	}
+
+	public java.lang.Integer getBookId() {
+		return getInt("book_id");
+	}
+
 	public M setOrderId(java.lang.String orderId) {
 		set("order_id", orderId);
 		return (M)this;

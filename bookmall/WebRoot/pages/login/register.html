@@ -1,0 +1,57 @@
+#set(title='用户注册') 
+#@index_layout() 
+#define index_main()
+<div class="text-center">
+	<h2>用户注册</h2>
+	<p class="text-danger">很抱歉,注册失败：#(errorMsg)</p>
+</div>
+<div class="col-md-6 col-md-offset-3">
+	<form action="#(ctx)/login/doregister" method="post">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					账号登录信息
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>邮箱地址(用于登录名)</label> <input type="email" name="email" value="#(email)"
+						class="form-control" placeholder="请输入邮箱" required autofocus>
+				</div>
+				<div class="form-group">
+					<label>密码</label> <input type="password"
+						name="password" class="form-control" placeholder="请输入密码" required>
+				</div>
+				<div class="form-group">
+					<label>确认密码</label> <input type="password"
+						name="password1" class="form-control" placeholder="请输入密码" required>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					用户信息
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>姓名</label> <input type="text" name="name" value="#(name)"
+						class="form-control" placeholder="请输入姓名" required>
+				</div>
+				<div class="form-group">
+					<label>手机号码</label> <input type="text" name="mobile" value="#(mobile)"
+						class="form-control" placeholder="请输入手机号码" required>
+				</div>
+				<div class="form-group">
+					<label>收货地址</label> <input type="text" name="address" value="#(address)"
+						class="form-control" placeholder="请输入详细地址(包括省、市、镇、街道、小区等 )" required>
+				</div>
+				
+			</div>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+		
+	</form>
+</div>
+#end

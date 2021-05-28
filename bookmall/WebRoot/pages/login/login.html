@@ -1,0 +1,27 @@
+#set(title='用户登录') #@index_layout() #define index_main()
+<div class="col-md-6 col-md-offset-3">
+	<div class="text-center">
+		<h2>用户登录</h2>
+	</div>
+	<form>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">账号登录信息</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="inputEmail">邮箱地址</label> <input type="email"
+						name="email" class="form-control" placeholder="请输入邮箱" required
+						autofocus>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword">密码</label> <input type="password"
+						id="password" class="form-control" placeholder="请输入密码" required>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+	</form>
+</div>
+#end
+

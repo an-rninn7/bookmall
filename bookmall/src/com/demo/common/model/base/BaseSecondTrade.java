@@ -99,13 +99,31 @@ public abstract class BaseSecondTrade<M extends BaseSecondTrade<M>> extends Mode
 		return getInt("buyer_id");
 	}
 
-	public M setAddress(java.lang.String address) {
-		set("address", address);
+	public M setBuyerName(java.lang.String buyerName) {
+		set("buyer_name", buyerName);
 		return (M)this;
 	}
 
-	public java.lang.String getAddress() {
-		return getStr("address");
+	public java.lang.String getBuyerName() {
+		return getStr("buyer_name");
+	}
+
+	public M setBuyerMobile(java.lang.String buyerMobile) {
+		set("buyer_mobile", buyerMobile);
+		return (M)this;
+	}
+
+	public java.lang.String getBuyerMobile() {
+		return getStr("buyer_mobile");
+	}
+
+	public M setBuyerAddress(java.lang.String buyerAddress) {
+		set("buyer_address", buyerAddress);
+		return (M)this;
+	}
+
+	public java.lang.String getBuyerAddress() {
+		return getStr("buyer_address");
 	}
 
 	public M setCommented(java.lang.Integer commented) {

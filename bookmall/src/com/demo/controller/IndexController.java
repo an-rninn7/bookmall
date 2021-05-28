@@ -1,4 +1,4 @@
-package com.demo.index;
+package com.demo.controller;
 
 import com.jfinal.core.Controller;
 
