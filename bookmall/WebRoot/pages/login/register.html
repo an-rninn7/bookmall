@@ -3,7 +3,9 @@
 #define index_main()
 <div class="text-center">
 	<h2>用户注册</h2>
-	<p class="text-danger">很抱歉,注册失败：#(errorMsg)</p>
+	#if(errorMsg != null)
+		<p class="text-danger">注册失败：#(errorMsg)</p>
+	#end
 </div>
 <div class="col-md-6 col-md-offset-3">
 	<form action="#(ctx)/login/doregister" method="post">
@@ -47,7 +49,10 @@
 					<label>收货地址</label> <input type="text" name="address" value="#(address)"
 						class="form-control" placeholder="请输入详细地址(包括省、市、镇、街道、小区等 )" required>
 				</div>
-				
+				<div class="form-group">
+			    <label>身份证照片</label>
+			      <input type="file" name="photo" class="form-control" placeholder="" required accept="image/*">
+			  </div>
 			</div>
 		</div>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>

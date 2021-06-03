@@ -1,0 +1,49 @@
+#set(title='换书交易审核',menu='exchangeaudit')
+#@user_layout()
+#define user_main()
+	 <h1 class="page-header">#(title)</h1>
+     <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>发起人</th>
+                  <th>发起时间</th>
+                  <th>书名</th>
+                  <th>单价（元）</th>
+                  <th>数量</th>
+                  <th>原价（元）</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+             	<tr>
+                  <td>1</td>
+                  <td>陈四</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>摆渡人1</td>
+                  <td>29.8</td>
+                  <td>1</td>
+                  <td>29.8</td>
+                  <td>待审核</td>
+                  <td><a type="button" class="btn btn-info" href="#(ctx)/book/edit">通过</a>
+                  	<button type="button" class="btn btn-warning">拒绝</button>
+                  </td>
+                </tr>
+              <tr>
+                  <td>2</td>
+                  <td>陈四</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>摆渡人2</td>
+                  <td>39.8</td>
+                  <td>1</td>
+                  <td>39.8</td>
+                  <td>交易中</td>
+                  <td>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+#end

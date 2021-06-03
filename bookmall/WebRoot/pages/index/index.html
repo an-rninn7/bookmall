@@ -29,24 +29,113 @@
         </a>
       </div>
 
-	<div class="row marketing">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+	<div class="row text-center">
+		#for(x : page.getList())
+	        <div class="col-lg-3 col-sm-6">
+	          <a href="#(ctx)/book/detail/#(x.id)">
+	          <img src="#(x.bookImg)" alt="book image" width="140" height="140">
+	          <h4>#(x.name)</h4>
+	         </a>
+	          <p>#(x.author)</p>
+	          <p>¥#(x.price)</p>
+	        </div><!-- /.col-lg-3 -->
+		#end
+        
+        <div class="col-lg-3 col-sm-6"><a href="#">
+          <img src="http://img3x2.ddimg.cn/51/34/25159812-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>一禅小和尚</h4></a>
+          <p>一禅小和尚</p>
+          <p>¥39.50</p>
         </div><!-- /.col-lg-3 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        
+        <div class="col-lg-3 col-sm-6"><a href="#">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4></a>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
         </div><!-- /.col-lg-3 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        
+        <div class="col-lg-3 col-sm-6"><a href="#">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4></a>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/16/23/25163242-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>摆渡人2</h4>
+         
+          <p>克莱儿·麦克福尔</p>
+          <p>¥29.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/51/34/25159812-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>一禅小和尚</h4>
+          <p>一禅小和尚</p>
+          <p>¥39.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/16/23/25163242-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>摆渡人2</h4>
+         
+          <p>克莱儿·麦克福尔</p>
+          <p>¥29.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/51/34/25159812-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>一禅小和尚</h4>
+          <p>一禅小和尚</p>
+          <p>¥39.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/16/23/25163242-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>摆渡人2</h4>
+         
+          <p>克莱儿·麦克福尔</p>
+          <p>¥29.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x2.ddimg.cn/51/34/25159812-1_l_9.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>一禅小和尚</h4>
+          <p>一禅小和尚</p>
+          <p>¥39.50</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3 col-sm-6">
+          <img src="http://img3x4.ddimg.cn/13/21/25148884-1_l_3.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h4>《去旅行2》人文地</h4>
+          <p>[法］米莉·卡布罗尔 </p>
+          <p>¥85.80</p>
         </div><!-- /.col-lg-3 -->
       </div>
 #end

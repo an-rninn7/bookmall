@@ -81,4 +81,22 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getStr("address");
 	}
 
+	public M setPhoto(java.lang.String photo) {
+		set("photo", photo);
+		return (M)this;
+	}
+
+	public java.lang.String getPhoto() {
+		return getStr("photo");
+	}
+
+	public M setStatus(java.lang.Integer status) {
+		set("status", status);
+		return (M)this;
+	}
+
+	public java.lang.Integer getStatus() {
+		return getInt("status");
+	}
+
 }

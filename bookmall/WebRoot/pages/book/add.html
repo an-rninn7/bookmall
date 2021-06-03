@@ -1,0 +1,89 @@
+#set(title='新增图书',menu='book')
+#@user_layout()
+#define user_main()
+	 <h1 class="page-header">#(title)</h1>
+     <div>
+     	<form class="form-horizontal" action="#(ctx)/book/doadd" method="post" enctype="multipart/form-data">
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">书名</label>
+			    <div class="col-sm-4">
+			      <input type="text" name="name" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">作者</label>
+			    <div class="col-sm-4">
+			      <input type="text" name="author" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">类别</label>
+			    <div class="col-sm-4">
+			    	<select name="category" class="form-control" placeholder="" required>
+			    		<option value="小说">小说</option>
+			    		<option value="文艺">文艺</option>
+			    		<option value="童书">童书</option>
+			    		<option value="教育">教育</option>
+			    		<option value="人文社科">人文社科</option>
+			    		<option value="经管">经管</option>
+			    		<option value="生活">生活</option>
+			    	</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">简介</label>
+			    <div class="col-sm-4">
+			      <textarea name="summary" class="form-control" placeholder="" required></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">价格</label>
+			    <div class="col-sm-4">
+			      <input type="number" name="price" min="1" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">数量</label>
+			    <div class="col-sm-4">
+			      <input type="number" name="inventory" min="1" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">出版社</label>
+			    <div class="col-sm-4">
+			      <input type="text" name="publisher" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">出版日期</label>
+			    <div class="col-sm-4">
+			      <input type="date" name="pubDate" class="form-control" placeholder="" required>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">详情描述</label>
+			    <div class="col-sm-4">
+			      <textarea name="description" class="form-control" placeholder=""></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">图书图片</label>
+			    <div class="col-sm-4">
+			      <input type="file" name="bookImg" class="form-control" placeholder="" accept="image/*">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-4 control-label">详情图片</label>
+			    <div class="col-sm-4">
+			      <input type="file" name="descImg" class="form-control" placeholder="" accept="image/*">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-5 col-sm-2">
+			      <button type="submit" class="btn btn-success">保存</button>
+			       <button type="reset" class="btn btn-info">重置</button>
+			    </div>
+			  </div>
+			</form>
+     </div>
+#end

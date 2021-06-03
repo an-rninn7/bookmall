@@ -1,0 +1,54 @@
+#set(title='注册用户审核',menu='useraudit')
+#@user_layout()
+#define user_main()
+	<h1 class="page-header">#(title)</h1>
+     <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>姓名</th>
+                  <th>身份证照片</th>
+                  <th>邮箱地址</th>
+                  <th>手机号码</th>
+                  <th>收货地址</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              #for(x : page.getList())
+              	<tr>
+              	  <td>#(for.index+1)</td>
+                  <td>#(x.name)</td>
+                  <td><a type="button" class="btn btn-link" target="_blank" href="http://img61.ddimg.cn/2017/9/29/2017092917142270281.jpg">查看</a></td>
+                  <td>#(x.email)</td>
+                  <td>#(x.mobile)</td>
+                  <td>#(x.address)</td>
+                  <td>
+                  	#if(x.status == 2)
+                  		审核通过
+                  	#elseif(x.status == 3)
+                  		审核拒绝
+                  	#else
+                  		待审核
+                  	#end
+                  </td>
+                  <td>
+                  	#if(x.status == 1)
+	                    <button type="button" class="btn btn-info" id="auidtBtn-#(x.id)-2">通过</button>
+	                  	<button type="button" class="btn btn-warning" id="auidtBtn-#(x.id)-3">拒绝</button>
+                  	#end
+                  </td>
+                </tr>
+              
+              #end
+              
+              </tbody>
+            </table>
+          </div>
+#end
+
+#define js()
+
+#end

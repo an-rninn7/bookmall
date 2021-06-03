@@ -1,0 +1,44 @@
+#set(title='订单管理',menu='order')
+#@user_layout()
+#define user_main()
+	 <h1 class="page-header">#(title)</h1>
+     <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>用户名称</th>
+                  <th>订单编号</th>
+                  <th>订单金额</th>
+                  <th>下单时间</th>
+                  <th>订单状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+             	<tr>
+                  <td>1</td>
+                  <td>陈四</td>
+                  <td>S20171015120433123</td>
+                  <td>30.4</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>待买家付款</td>
+                  <td><a type="button" class="btn btn-info" href="#(ctx)/order/detail">详情</a>
+                  </td>
+                </tr>
+              <tr>
+                  <td>2</td>
+                  <td>陈四</td>
+                  <td>S20171015120433123</td>
+                  <td>30.4</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>待发货</td>
+                  <td>
+                  <a type="button" class="btn btn-info" href="#(ctx)/book/edit">详情</a>
+                  <a type="button" class="btn btn-info" href="#(ctx)/book/edit">发货</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+#end

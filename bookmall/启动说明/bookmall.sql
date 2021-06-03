@@ -11,13 +11,15 @@ CREATE TABLE `user` (
 	`password` varchar(64) NOT NULL,
 	`blance` double NOT NULL default 1000,
 	`address` varchar(200) NOT NULL,
+	`photo` varchar(200) NOT NULL,
+	`status` int NOT NULL comment '1：待审核，2：审核通过，3：审核拒绝' ,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `book` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(64) NOT NULL,
-	`summary` varchar(64) NOT NULL,
+	`summary` varchar(512) NOT NULL,
 	`category` varchar(64) NOT NULL,
   `author` varchar(32) NOT NULL,
 	`publisher` varchar(64) NOT NULL,
@@ -26,7 +28,8 @@ CREATE TABLE `book` (
 	`inventory` int NOT NULL default 20,
 	`pub_date` varchar(32) NOT NULL,
 	`description` mediumtext NOT NULL,
- 	`img` varchar(64) NULL,
+ 	`book_img` varchar(64) NULL,
+ 	`desc_img` varchar(64) NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,6 +72,7 @@ CREATE TABLE `second_trade` (
 	`buyer_name` varchar(32) NULL,
 	`buyer_mobile` varchar(32) NULL,
 	`buyer_address` varchar(200) NOT NULL,
+	`create_time` datetime NOT NULL,
 	`commented` int NOT NULL default 0 comment '0:未评价,1:已评价',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -80,6 +84,7 @@ CREATE TABLE `exchange_trade` (
 	`status` int NOT NULL default 0 comment '0:待审核,1:交易中,4:交易完成，5：交易关闭' ,
 	`buyer_id` int(11) NOT NULL,
 	`buyer_exchange_item_id` int(11) NULL,
+	`create_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

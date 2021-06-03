@@ -9,19 +9,7 @@
   margin-bottom: 60px;
 }
 
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
+.name_info {
+	border-bottom:1px solid #f5f5f5;
+	padding:0 6px 6px 0;
 }

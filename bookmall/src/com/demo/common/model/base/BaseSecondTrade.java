@@ -126,6 +126,15 @@ public abstract class BaseSecondTrade<M extends BaseSecondTrade<M>> extends Mode
 		return getStr("buyer_address");
 	}
 
+	public M setCreateTime(java.util.Date createTime) {
+		set("create_time", createTime);
+		return (M)this;
+	}
+
+	public java.util.Date getCreateTime() {
+		return get("create_time");
+	}
+
 	public M setCommented(java.lang.Integer commented) {
 		set("commented", commented);
 		return (M)this;

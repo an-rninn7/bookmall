@@ -63,4 +63,13 @@ public abstract class BaseExchangeTrade<M extends BaseExchangeTrade<M>> extends 
 		return getInt("buyer_exchange_item_id");
 	}
 
+	public M setCreateTime(java.util.Date createTime) {
+		set("create_time", createTime);
+		return (M)this;
+	}
+
+	public java.util.Date getCreateTime() {
+		return get("create_time");
+	}
+
 }

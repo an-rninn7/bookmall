@@ -2,8 +2,12 @@ package com.demo.common;
 
 import com.demo.blog.BlogController;
 import com.demo.common.model._MappingKit;
+import com.demo.controller.BookController;
+import com.demo.controller.CommentsController;
 import com.demo.controller.IndexController;
 import com.demo.controller.LoginController;
+import com.demo.controller.OrderController;
+import com.demo.controller.TradeController;
 import com.demo.controller.UserController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -13,6 +17,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
+import com.jfinal.ext.interceptor.SessionInViewInterceptor;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -61,14 +66,19 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/", IndexController.class, "/pages/index"); // 第三个参数为该Controller的视图存放路径
 		me.add("/login", LoginController.class, "/pages/login");
 		me.add("/user", UserController.class, "/pages/user");
-		me.add("/order", UserController.class, "/pages/order");
+		me.add("/order", OrderController.class, "/pages/order");
+		me.add("/book", BookController.class, "/pages/book");
+		me.add("/trade", TradeController.class, "/pages/trade");
+		me.add("/comments", CommentsController.class, "/pages/comments");
 		me.add("/blog", BlogController.class); // 第三个参数省略时默认与第一个参数值相同，在此即为
 												// "/blog"
 	}
 
 	public void configEngine(Engine me) {
 		me.addSharedFunction("/pages/common/_layout.html");
+		me.addSharedFunction("/pages/common/_user_layout.html");
 		me.addSharedFunction("/pages/common/_paginate.html");
+
 	}
 
 	public static DruidPlugin createDruidPlugin() {
@@ -96,6 +106,7 @@ public class DemoConfig extends JFinalConfig {
 	 */
 	public void configInterceptor(Interceptors me) {
 		me.addGlobalActionInterceptor(new SessionInterceptor());
+		me.addGlobalActionInterceptor(new SessionInViewInterceptor());
 	}
 
 	/**

@@ -108,13 +108,22 @@ public abstract class BaseBook<M extends BaseBook<M>> extends Model<M> implement
 		return getStr("description");
 	}
 
-	public M setImg(java.lang.String img) {
-		set("img", img);
+	public M setBookImg(java.lang.String bookImg) {
+		set("book_img", bookImg);
 		return (M)this;
 	}
 
-	public java.lang.String getImg() {
-		return getStr("img");
+	public java.lang.String getBookImg() {
+		return getStr("book_img");
+	}
+
+	public M setDescImg(java.lang.String descImg) {
+		set("desc_img", descImg);
+		return (M)this;
+	}
+
+	public java.lang.String getDescImg() {
+		return getStr("desc_img");
 	}
 
 }

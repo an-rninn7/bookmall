@@ -6,7 +6,15 @@ import com.jfinal.core.Controller;
 public class OrderController extends Controller {
 	static LoginService service = new LoginService();
 
-	public void index() {
-		render("login.html");
+	public void list() {
+		render("list.html");
+	}
+
+	public void detail() {
+		render("detail.html");
+	}
+
+	public void mylist() {
+		render("mylist.html");
 	}
 }

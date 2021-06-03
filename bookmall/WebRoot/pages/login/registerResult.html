@@ -3,11 +3,11 @@
 #define index_main()
 <div class="text-center">
 	#if(errorCode == '0')
-		<p class="text-success">恭喜您,注册成功,点击 <a href="#(ctx)/login">登录</a>. </p>
+		<p class="text-success">恭喜您，注册成功,点击 <a href="#(ctx)/login">登录</a>。</p>
 	#elseif(errorCode == '1001')
-		<p class="text-success">很抱歉,注册失败,邮件已被注册. </p>
+		<p class="text-danger">注册失败，邮件已被注册，请<a href="#(ctx)/login/register">重新注册</a>。 </p>
 	#else
-		<p class="text-danger">很抱歉,注册失败,请<a href="#(ctx)/login/register">重新注册</a>. </p>
+		<p class="text-danger">注册失败，请<a href="#(ctx)/login/register">重新注册</a>。 </p>
 	#end
 </div>
 #end

@@ -1,0 +1,49 @@
+#set(title='书评审核',menu='commentsaudit')
+#@user_layout()
+#define user_main()
+	 <h1 class="page-header">#(title)</h1>
+     <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>用户名称</th>
+                  <th>订单编号</th>
+                  <th>书名</th>
+                  <th>总体评价</th>
+                  <th>评价内容</th>
+                  <th>评价时间</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+             	<tr>
+                  <td>1</td>
+                  <td>陈四</td>
+                  <td>S20171015120433123</td>
+                  <td>摆渡人1</td>
+                  <td>非常满意</td>
+                  <td>这本书内容很不错，值得购买哦。</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>待审核</td>
+                  <td><a type="button" class="btn btn-info" href="#(ctx)/book/edit">通过</a>
+                  	<button type="button" class="btn btn-warning">拒绝</button>
+                  </td>
+                </tr>
+              <tr>
+                  <td>1</td>
+                  <td>陈四</td>
+                  <td>S20171015130433133</td>
+                  <td>摆渡人1</td>
+                  <td>非常满意</td>
+                  <td>这本书内容很不错，值得购买哦。</td>
+                  <td>2017-10-14 23:58:02</td>
+                  <td>审核通过</td>
+                  <td>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+#end

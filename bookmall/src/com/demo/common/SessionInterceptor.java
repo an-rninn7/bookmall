@@ -1,5 +1,6 @@
 package com.demo.common;
 
+import com.demo.constants.Constants;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
@@ -19,14 +20,13 @@ public class SessionInterceptor implements Interceptor {
 		Controller ctl = ai.getController();
 
 		// 判断用户是否登录
-		// inv.getController().getSessionAttr(key)
+		Object user = ai.getController().getSessionAttr(
+				Constants.SESSION_LOGIN_USER);
 		String action = ai.getActionKey();
-		Object user = null;
 		if (user != null || action.indexOf("login") >= 0) {
 			ai.invoke();
 		} else {
-			// ctl.redirect("/login");
-			ai.invoke();
+			ctl.redirect("/login");
 		}
 		System.out.println("SessionInterceptor After invoking "
 				+ ai.getActionKey());
