@@ -8,4 +8,14 @@ import com.demo.common.model.base.BaseShopcart;
 @SuppressWarnings("serial")
 public class Shopcart extends BaseShopcart<Shopcart> {
 	public static final Shopcart dao = new Shopcart().dao();
+
+	private Book book;
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 }

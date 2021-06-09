@@ -1,0 +1,49 @@
+#set(title='我的购物车')
+#@index_layout()
+#define index_main()
+<div class="row">
+	<ol class="breadcrumb">
+	  <li><a href="#(ctx)">首页</a></li>
+	  <li class="active">我的购物车</li>
+	</ol>
+</div>
+#set(total = 0)
+ <div class="table-responsive">
+        <table class="table table-striped ">
+          <thead>
+            <tr>
+              <th>图书信息</th>
+              <th>单价（元）</th>
+              <th>数量</th>
+              <th>金额（元）</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          #for(x : list)
+          		#set(total = total + x.total)
+          		<tr>
+	              <td><a href="#(ctx)/book/detail/#(x.bookId)"><img src="#(x.book.bookImg)" alt="book image" width="70px"></a>
+	              	<a href="#(ctx)/book/detail/#(x.bookId)">#(x.book.name)</a>
+	              </td>
+	              <td>¥#(x.price)</td>
+	              <td>#(x.num)</td>
+	              <td>¥#(x.total)</td>
+	              <td><button type="button" class="btn btn-info" id="delFromCartBtn-#(x.id)">删除</button>
+	              </td>
+	            </tr>
+          #end
+          </tbody>
+        </table>
+        
+        <div class="text-right">
+        	<div>
+        		#if(total > 0)
+					<h2 class="text-danger">总计：¥#(total)</h2>
+					<a type="button" class="btn btn-success" href="#(ctx)/order/settle" >去结算</a>
+				#end
+			</div>
+        </div>
+      </div>
+      
+#end

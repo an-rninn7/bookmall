@@ -26,8 +26,12 @@
 	                  <td>#(statusMap[x.status+''])</td>
 	                  <td>
 	                  		<a type="button" class="btn btn-info" href="#(ctx)/order/detail/#(x.id)">详情</a>
-	                  	#if(x.status == 2) 
-	                  		<button type="button" class="btn btn-info" id="deliveryBtn-#(x.id)">发货</button>
+	                  	#if(x.status == 1) 
+	                  		<button type="button" class="btn btn-info" id="payBtn-#(x.id)">付款</button>
+	                  	#elseif(x.status == 3) 
+	                  		<button type="button" class="btn btn-info" id="recBtn-#(x.id)">确认收货</button>
+	                  	#elseif(x.status == 4 && x.commented == 0) 
+	                  		<a type="button" class="btn btn-info" href="#(ctx)/comments/#(x.id)">评价</a>
 	                  	#end
 	                  </td>
 	                </tr>

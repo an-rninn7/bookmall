@@ -1,27 +1,33 @@
-#set(title='订单详情',menu='order')
+#set(title='订单详情',menu='order',statusMap={'1':'待买家付款','2':'待发货','3':'待买家确认收货','4':'交易完成','5':'交易关闭'})
 #@user_layout()
 #define user_main()
 	 <h1 class="page-header">#(title)</h1>
+	 	<div class="row">
+			<ol class="breadcrumb">
+			  <li><a href="#(ctx)/order/list">订单管理</a></li>
+			  <li class="active">订单详情</li>
+			</ol>
+		</div>
 	 	<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">订单基本信息</h3>
+				<h3 class="panel-title">订单基本信息 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-success">#(statusMap[order.status+''])</span></h3>
 			</div>
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-sm-2 control-label"><p>订单编号</p></div>
-					<div class="col-sm-4 text-left"><p>S20171015120433123</p></div>
+					<div class="col-sm-4 text-left"><p>#(order.id)</p></div>
 					<div class="col-sm-2 control-label"><p>下单时间</p></div>
-					<div class="col-sm-4 text-left"><p>2017-10-14 23:58:02</p></div>
+					<div class="col-sm-4 text-left"><p>#(order.createTime)</p></div>
 				</div>
 				<div class="row">
 					<div class="col-sm-2 control-label"><p>支付时间</p></div>
-					<div class="col-sm-4 text-left"><p>2017-10-14 23:58:02</p></div>
+					<div class="col-sm-4 text-left"><p>#(order.payTime)</p></div>
 					<div class="col-sm-2 control-label"><p>发货时间</p></div>
-					<div class="col-sm-4 text-left"><p>2017-10-14 23:58:02</p></div>
+					<div class="col-sm-4 text-left"><p>#(order.deliveryTime)</p></div>
 				</div>
 				<div class="row">
 					<div class="col-sm-2 control-label"><p>邮寄地址</p></div>
-					<div class="col-sm-10 text-left"><p>广东省广州市天河区五山路21号 陈四海 13567345203</p></div>
+					<div class="col-sm-10 text-left"><p>#(order.address) #(order.name) #(order.mobile)</p></div>
 				</div>
 			</div>
 		</div>
@@ -32,7 +38,7 @@
 			<div class="panel-body">
 				<div class="table-responsive">
 		            <table class="table table-striped ">
-		              <caption class="text-danger">订单总金额：65.00（元）</caption>
+		              <caption class="text-danger">订单总金额：#(order.total)（元）</caption>
 		              <thead>
 		                <tr>
 		                  <th>序号</th>
@@ -43,24 +49,16 @@
 		                </tr>
 		              </thead>
 		              <tbody>
+		              	#for(x : order.getItems())
 		             	<tr>
-		                  <td>1</td>
-		                  <td>摆渡人1</td>
-		                  <td>30.4</td>
-		                  <td>1</td>
-		                  <td>30.4</td>
-		                  <td>
-		                  </td>
+		                  <td>#(for.index+1)</td>
+		                  <td><a href="#(ctx)/book/detail/#(x.bookId)"><img src="#(x.book.bookImg)" alt="book image" width="70px"></a>
+	              				<a href="#(ctx)/book/detail/#(x.bookId)">#(x.book.name)</a></td>
+		                  <td>¥#(x.price)</td>
+			              <td>#(x.num)</td>
+			              <td>¥#(x.total)</td>
 		                </tr>
-		              <tr>
-		                  <td>2</td>
-		                  <td>摆渡人2</td>
-		                  <td>25.4</td>
-		                  <td>1</td>
-		                  <td>25.4</td>
-		                  <td>
-		                  </td>
-		                </tr>
+		                #end
 		              </tbody>
 		            </table>
 		          </div>

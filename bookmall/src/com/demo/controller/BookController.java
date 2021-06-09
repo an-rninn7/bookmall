@@ -2,7 +2,9 @@ package com.demo.controller;
 
 import com.demo.common.SessionInterceptor;
 import com.demo.common.model.Book;
+import com.demo.common.model.Comments;
 import com.demo.service.BookService;
+import com.demo.service.CommentsService;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
@@ -10,6 +12,7 @@ import com.jfinal.plugin.activerecord.Page;
 public class BookController extends Controller {
 
 	static BookService service = new BookService();
+	static CommentsService commentsService = new CommentsService();
 
 	public void index() {
 		Page<Book> page = service.paginate(1, 10);
@@ -21,6 +24,8 @@ public class BookController extends Controller {
 	public void detail() {
 		Integer bid = getParaToInt();
 		Book book = Book.dao.findById(bid);
+		Page<Comments> page = commentsService.getByBookId(1, 10, book.getId());
+		setAttr("page", page);
 		setAttr("book", book);
 		render("detail.html");
 	}

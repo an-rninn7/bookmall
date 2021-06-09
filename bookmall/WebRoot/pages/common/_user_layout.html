@@ -52,10 +52,10 @@
         <div class="col-sm-3 col-md-2 sidebar">
         #if(session.session_user.type == 0)
           <ul class="nav nav-sidebar">
-            <li class="#(menu == 'userinfo' ? 'active':'')"><a href="#">我的订单<span class="sr-only">(current)</span></a></li>
+            <li class="#(menu == 'order' ? 'active':'')"><a href="#(ctx)/order/list">我的订单<span class="sr-only">(current)</span></a></li>
             <li class="#(menu == 'secondtrade' ? 'active':'')"><a href="#">二手书单</a></li>
             <li class="#(menu == 'exchangetrade' ? 'active':'')"><a href="#">换书单</a></li>
-            <li class="#(menu == 'mycomments' ? 'active':'')"><a href="#">我的书评</a></li>
+            <li class="#(menu == 'mycomments' ? 'active':'')"><a href="#(ctx)/comments/mine">我的书评</a></li>
             <li class="#(menu == 'userinfo' ? 'active':'')"><a href="">个人信息</a></li>
           </ul>
          #else 
@@ -65,7 +65,7 @@
             <li class="#(menu == 'book' ? 'active':'')"><a href="#(ctx)/book/list">图书管理<span class="sr-only">(current)</span></a></li>
             <li class="#(menu == 'secondaudit' ? 'active':'')"><a href="#(ctx)/trade/secondaudit">二手交易审核</a></li>
             <li class="#(menu == 'exchangeaudit' ? 'active':'')"><a href="#(ctx)/trade/exchangeaudit">换书交易审核</a></li>
-            <li class="#(menu == 'commentsaudit' ? 'active':'')"><a href="#(ctx)/comments/audit">书评审核</a></li>
+            <li class="#(menu == 'commentsaudit' ? 'active':'')"><a href="#(ctx)/comments/auditList">书评审核</a></li>
             <li class="#(menu == 'userinfo' ? 'active':'')"><a href="">个人信息</a></li>
           </ul>
          #end 
@@ -87,7 +87,12 @@
     <script src="#(ctx)/third/jquery/jquery.min.js"></script>
     <script src="#(ctx)/third/bootstrap/bootstrap.min.js"></script>
     <script src="#(ctx)/js/common.js"></script>
-    <script src="#(ctx)/js/user.js"></script>
+    #if(session.session_user.type == 0)
+    	<script src="#(ctx)/js/user.js"></script>
+    #else 
+    <script src="#(ctx)/js/admin.js"></script>
+    #end
+    
     #@js?()
   </body>
 </html>

@@ -8,4 +8,13 @@ import com.demo.common.model.base.BaseOrderItem;
 @SuppressWarnings("serial")
 public class OrderItem extends BaseOrderItem<OrderItem> {
 	public static final OrderItem dao = new OrderItem().dao();
+	private Book book;
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 }

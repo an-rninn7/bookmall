@@ -7,6 +7,7 @@ import com.demo.controller.CommentsController;
 import com.demo.controller.IndexController;
 import com.demo.controller.LoginController;
 import com.demo.controller.OrderController;
+import com.demo.controller.ShopcartController;
 import com.demo.controller.TradeController;
 import com.demo.controller.UserController;
 import com.jfinal.config.Constants;
@@ -70,6 +71,7 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/book", BookController.class, "/pages/book");
 		me.add("/trade", TradeController.class, "/pages/trade");
 		me.add("/comments", CommentsController.class, "/pages/comments");
+		me.add("/cart", ShopcartController.class, "/pages/order");
 		me.add("/blog", BlogController.class); // 第三个参数省略时默认与第一个参数值相同，在此即为
 												// "/blog"
 	}

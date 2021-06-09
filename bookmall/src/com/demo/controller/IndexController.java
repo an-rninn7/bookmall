@@ -1,5 +1,6 @@
 package com.demo.controller;
 
+import com.demo.common.SessionInterceptor;
 import com.demo.common.model.Book;
 import com.demo.service.BookService;
 import com.jfinal.aop.Clear;
@@ -12,7 +13,7 @@ import com.jfinal.plugin.activerecord.Page;
  * 
  * IndexController
  */
-@Clear
+@Clear(SessionInterceptor.class)
 public class IndexController extends Controller {
 
 	static BookService service = new BookService();

@@ -63,6 +63,42 @@ public abstract class BaseOrder<M extends BaseOrder<M>> extends Model<M> impleme
 		return get("delivery_time");
 	}
 
+	public M setName(java.lang.String name) {
+		set("name", name);
+		return (M)this;
+	}
+
+	public java.lang.String getName() {
+		return getStr("name");
+	}
+
+	public M setPayway(java.lang.String payway) {
+		set("payway", payway);
+		return (M)this;
+	}
+
+	public java.lang.String getPayway() {
+		return getStr("payway");
+	}
+
+	public M setInvoice(java.lang.String invoice) {
+		set("invoice", invoice);
+		return (M)this;
+	}
+
+	public java.lang.String getInvoice() {
+		return getStr("invoice");
+	}
+
+	public M setMobile(java.lang.String mobile) {
+		set("mobile", mobile);
+		return (M)this;
+	}
+
+	public java.lang.String getMobile() {
+		return getStr("mobile");
+	}
+
 	public M setAddress(java.lang.String address) {
 		set("address", address);
 		return (M)this;

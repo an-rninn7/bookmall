@@ -1,7 +1,11 @@
-#set(title='用户登录') #@index_layout() #define index_main()
+#set(title='登录') #@index_layout() #define index_main()
 <div class="col-md-6 col-md-offset-3">
 	<div class="text-center">
-		<h2>用户登录</h2>
+		#if(isAdmin) 
+			<h2>管理员登录</h2>
+		#else
+			<h2>用户登录</h2>
+		#end
 		#if(errorCode != null)
 			<p class="text-danger">登陆失败：用户名或密码不正确。</p>
 		#end

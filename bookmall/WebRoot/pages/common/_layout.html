@@ -44,7 +44,7 @@
             <li><a href="#contact">换书</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          	<li><a href="#(ctx)/login">购物车</a></li>
+          	<li><a href="#(ctx)/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;购物车</a></li>
             #if(session != null && session.session_user != null)
           		<li><a href="#(ctx)/user">欢迎您，#(session.session_user.name)</a></li>
             #else
@@ -71,6 +71,7 @@
     <script src="#(ctx)/third/jquery/jquery.min.js"></script>
     <script src="#(ctx)/third/bootstrap/bootstrap.min.js"></script>
     <script src="#(ctx)/js/common.js"></script>
+    <script src="#(ctx)/js/index.js"></script>
     #@js?()
   </body>
 </html>

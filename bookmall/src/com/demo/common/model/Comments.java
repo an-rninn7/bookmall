@@ -8,4 +8,13 @@ import com.demo.common.model.base.BaseComments;
 @SuppressWarnings("serial")
 public class Comments extends BaseComments<Comments> {
 	public static final Comments dao = new Comments().dao();
+	private Book book;
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 }

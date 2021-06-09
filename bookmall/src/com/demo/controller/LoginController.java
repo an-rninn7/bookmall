@@ -15,6 +15,11 @@ public class LoginController extends Controller {
 		render("login.html");
 	}
 
+	public void admin() {
+		setAttr("isAdmin", true);
+		render("login.html");
+	}
+
 	public void dologin() {
 		String email = getPara("email");
 		String password = getPara("password");
